@@ -11,6 +11,17 @@ export const globalStyles = StyleSheet.create({
         shadowRadius: 7,
         elevation: 5,
     },
+    darkShadow: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: Platform.OS === 'ios' ? 0.3 : 0.20,
+        shadowRadius: 7,
+        elevation: 5,
+    },
+
     chartShadow: {
         shadowColor: "#E3E3E3",
         shadowOffset: {
