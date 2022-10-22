@@ -1,6 +1,16 @@
 import { Text, Image, ImageBackground } from "react-native"
 
-import { MainContainer, BalanceContainer, UserData, UserName, UserImage, UserBank, UserTitles, BalanceCard, BalanceHeader, BalanceText } from "./styles"
+import { MainContainer, 
+    BalanceContainer, 
+    UserData,
+    UserName, 
+    UserImage, 
+    UserBank, 
+    UserTitles,
+    BalanceCard, 
+    BalanceHeader,
+    BalanceText,
+    TransactionsContainer } from "./styles"
 const Home = () => {
     return (
         <MainContainer>
@@ -32,6 +42,10 @@ const Home = () => {
                   <BalanceText>56,432.00 LEK</BalanceText>
             </ImageBackground>
             </BalanceCard>
+
+            <TransactionsContainer>
+
+            </TransactionsContainer>
         </MainContainer>
     )
 }

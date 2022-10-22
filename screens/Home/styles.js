@@ -80,3 +80,10 @@ export const BalanceText = styled.Text`
     font-size: 32px;
     font-weight: 800;
 `
+
+
+export const TransactionsContainer = styled.View`
+    width: 90%;
+    padding: 30px 0 30px 0;
+    background: ${Colors.secondary}
+`
