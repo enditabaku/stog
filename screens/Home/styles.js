@@ -55,6 +55,12 @@ export const UserBank = styled.Text`
     font-weight: 200;
     padding-left: 10px;
 `
+export const BalanceCards = styled.View`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
 
 export const BalanceCard = styled.View`
     width: 80%;
@@ -62,7 +68,6 @@ export const BalanceCard = styled.View`
     border-radius: 50px;
     position: relative;
     bottom: 50px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,9 +86,50 @@ export const BalanceText = styled.Text`
     font-weight: 800;
 `
 
+export const TransactionsHeader = styled.Text`
+    font-size: 24px;
+    color: #191970;
+    font-weight: 800;
+    padding-top: 10px;
+    text-align: center;
+`
 
 export const TransactionsContainer = styled.View`
-    width: 90%;
-    padding: 30px 0 30px 0;
-    background: ${Colors.secondary}
+    width: 100%;
+    height: 60%;
+    border-radius: 50px 50px 0 0;
+    padding: 10px 0 25px 0;
+    background: ${Colors.transactionsBg};
+`
+
+export const TransactionContainer = styled.View`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+`
+
+export const TransactionDate = styled.Text`
+    color: ${Colors.black};
+    font-size: 12px;
+    padding-left: 5px;
+`
+
+export const TransactionCard = styled.View`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+`
+
+export const TransactionDescription = styled.Text`
+    font-size: 14px;
+    font-weight: 600;
+`
+
+export const TransactionAmount = styled.Text`
+    font-weight: 800;
 `

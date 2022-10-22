@@ -1,4 +1,4 @@
-import { Text, Image, ImageBackground } from "react-native"
+import { Text, Image, ImageBackground, ScrollView, View } from "react-native"
 
 import { MainContainer, 
     BalanceContainer, 
@@ -10,8 +10,118 @@ import { MainContainer,
     BalanceCard, 
     BalanceHeader,
     BalanceText,
-    TransactionsContainer } from "./styles"
+    TransactionsContainer,
+    TransactionCard,
+    TransactionAmount,
+    TransactionDate,
+    TransactionDescription,
+    TransactionContainer,
+    TransactionsHeader,
+    BalanceCards,
+    } from "./styles"
+
+    import { globalStyles } from "../../utils/globalStyles"
+
 const Home = () => {
+
+    const transactions = [
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "320.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "23423423er4234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "32,342.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum amogus domaet",
+            amount: "3,230.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "53,420.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "320.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "23423423er4234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "32,342.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum amogus domaet",
+            amount: "3,230.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "53,420.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "320.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "23423423er4234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "32,342.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum amogus domaet",
+            amount: "3,230.00",
+            isIncoming: true,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+        {
+            id: "234234234234324234234",
+            description: "Lorem ipsum alor domaet",
+            amount: "53,420.00",
+            isIncoming: false,
+            date: "17/02/2121",
+            studentId: "2131234213123",
+        },
+    ]
     return (
         <MainContainer>
             <BalanceContainer>
@@ -25,7 +135,7 @@ const Home = () => {
             </UserData>
             </BalanceContainer>
 
-            <BalanceCard>
+            <BalanceCard style={globalStyles.darkShadow}>
             <ImageBackground
                 source={require("../../assets/images/balance.jpg")}
                 style={{
@@ -43,8 +153,33 @@ const Home = () => {
             </ImageBackground>
             </BalanceCard>
 
-            <TransactionsContainer>
+            <TransactionsContainer style={globalStyles.articleShadow}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                <TransactionsHeader>
+                    TRANSACTIONS
+                </TransactionsHeader>
 
+                <View style={{height: 30}} />
+                  {
+                    transactions.map((transaction) => (
+                        <TransactionContainer>
+                            <TransactionDate>
+                                {transaction.date}
+                            </TransactionDate>
+                                <TransactionCard>
+                                    <TransactionDescription>
+                                        {transaction.description}
+                                    </TransactionDescription>
+                                    <TransactionAmount style={{color: transaction.isIncoming ? "#228B22" : "#FF0000"}}>
+                                        {transaction.isIncoming ? "+" : "-"}
+                                        {transaction.amount}
+                                    </TransactionAmount>
+                                </TransactionCard>
+                            </TransactionContainer>
+                    ))
+                  }
+                <View style={{height: 100}} />
+                </ScrollView>
             </TransactionsContainer>
         </MainContainer>
     )

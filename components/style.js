@@ -14,6 +14,9 @@ export const Colors = {
   primary: "#b83b2a",
   secondary: "#C11D1E",
   text: "#fff",
+  transactionsBg: "#E8EDEC",
+  transactionGreen: "#EDDEA4",
+  transactionRed: "#F63C28",
 
   white: '#fff',
   black: '#000',
