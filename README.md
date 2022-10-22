@@ -1,15 +1,15 @@
-# STOG
 ![Image](https://github.com/enditabaku/stog/blob/master/assets/Images/stog-logo-transparent.png)
 
-======= 
-   Student Cog
+=====
 
 ## How to run the project
 
 * get source code as a zip file or clone it using: git clone https://github.com/enditabaku/stog.git
 * type in the project terminal: npm i and after that: expo start
 * there are two options to open the project: in an emulator or in your mobile device
+
 ** to run it in an emulator use Android Studio
+
 ** to access it in your mobile device you should firstly download Expo app in your device
    after Expo is installed, scan the generated QR code.
    no matter what OS you are using the app will be opened in seconds and that's it!!! 
