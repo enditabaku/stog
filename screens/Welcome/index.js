@@ -52,9 +52,9 @@ const Login = () => {
 
   //login button is clicked: check if credentials are correct then persist login
   const handleLogin = async (credentials, setSubmitting) => {
-      setSubmitting(true);    
       try {
         //posla url api for login 
+      setSubmitting(true);    
         const url = 'https://fiskalizimi-dev-api.herokuapp.com/api/user/login';
         const result = await axios.post(url, credentials, {
           headers: {
@@ -101,20 +101,20 @@ const Login = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
           <ImageBackground
-              source={require("../../assets/images/login-01.png")}
+              source={require("../../assets/images/login.png")}
               style={{width: Dimensions.get('window').width, height:'100%', marginTop: Platform.OS === 'ios' ? -50 : 0}}
             >
               <LoginContainer>
                 <Formik
                   initialValues={{ username: "", password: "" }}
                   onSubmit={(values, { setSubmitting }) => {
-                    // if (values.username == "" || values.password == "") {
-                    //   handleMessage("Ju lutem plotësoni të gjitha fushat!");
-                    //   setSubmitting(false);
-                    // } else {
-                    //   handleLogin(values, setSubmitting);
-                    // }
-                    navigation.navigate('Home');
+                    if (values.username == "" || values.password == "") {
+                      handleMessage("Ju lutem plotësoni të gjitha fushat!");
+                      setSubmitting(false);
+                    } else {
+                      handleLogin(values, setSubmitting);
+                    }
+                    // navigation.navigate('Home');
                   }}
                 >
                   {({
