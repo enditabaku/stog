@@ -10,6 +10,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // All Screens
 import Welcome from './../screens/Welcome';
+import Home from "./../screens/Home";
 
 const Stack = createStackNavigator();
 
@@ -41,10 +42,11 @@ const RootStack = () => {
               headerShown: false,
               header: () => null,
             }}
-        //    initialRouteName={hasUser ? "Invoices" : "Welcome"}
+           initialRouteName="Home"
           >
             <>
                <Stack.Screen name="Welcome" component={Welcome} />
+               <Stack.Screen name="Home" component={Home} />
             </>
           </Stack.Navigator>
         </NavigationContainer>

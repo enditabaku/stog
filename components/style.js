@@ -11,22 +11,27 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 // colors
 export const Colors = {
-    white: '#fff',
-    black: '#000',
-    castletonGreen: '#17625D',
-    lightGrey: '#CACACA',
-    darkGrey: '#2a2d2d',
-    whiteGrey: '#DEE1E2',
-    orange: '#FF7A00',
-    transparentGreen: '#CFDFDA40',
-    lightGreen: '#CFDFDA',
-    dark: '#0d4c48',
-    lightGreenOpacity: '#CFDFDA90',
-    red: '#f05050',
-    strongGreen: '#12ac7a'
+  primary: "#b83b2a",
+  secondary: "#C11D1E",
+  text: "#fff",
+
+  white: '#fff',
+  black: '#000',
+  castletonGreen: '#17625D',
+  lightGrey: '#CACACA',
+  darkGrey: '#2a2d2d',
+  whiteGrey: '#DEE1E2',
+  orange: '#FF7A00',
+  transparentGreen: '#CFDFDA40',
+  lightGreen: '#CFDFDA',
+  dark: '#0d4c48',
+  lightGreenOpacity: '#CFDFDA90',
+  red: '#f05050',
+  strongGreen: '#12ac7a'
+
 };
 
-const { white, black, castletonGreen, lightGrey, orange, whiteGrey, transparentGreen, lightGreen, darkGrey, dark, lightGreenOpacity, red, strongGreen } = Colors;
+const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen } = Colors;
 
 /* //////////////////////////////////////////// */
 /* ////////// GENERAL STYLES /////////// */
@@ -41,7 +46,7 @@ export const CenterContainer = styled.View`
 
 export const LogoutButton = styled.TouchableOpacity`
   border-radius: 50px;
-  background-color: ${castletonGreen};
+  background-color: ${primary};
   width: 70px;
   height: 70px;
   position: absolute;
