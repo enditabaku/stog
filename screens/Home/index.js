@@ -1,4 +1,5 @@
-import { Text, Image, ImageBackground, ScrollView, View } from "react-native"
+import { Text, Image, ImageBackground, ScrollView, View, Animated } from "react-native"
+import { useEffect, useRef } from "react"
 
 import { MainContainer, 
     BalanceContainer, 
@@ -23,6 +24,52 @@ import { MainContainer,
     import { globalStyles } from "../../utils/globalStyles"
 
 const Home = () => {
+
+    // Values to animate balance card
+    const opacityCard = useRef(new Animated.Value(0)).current;
+    const leftCard = useRef(new Animated.Value(0)).current;
+
+    // Values to animate balance container
+    const balanceTop = useRef(new Animated.Value(-300)).current;
+
+    const transactionsBottom = useRef(new Animated.Value(-800)).current;
+
+    // Animates the opacity of balance card by changing the value used as opacity
+    const fadeCard = () => {
+        Animated.timing(opacityCard, {
+          toValue: 1,
+          duration: 1200
+        }).start();
+      };
+    
+    // Animates the position of balance card by changing the value used as left
+    const swipeCard = () => {
+        Animated.timing(leftCard, {
+            toValue: 0,
+            duration: 600
+          }).start();
+    }
+
+    // Animates the opsition of balance component by changing the value used as top
+    const balanceDown = () => {
+        Animated.timing(balanceTop, {
+            toValue: 0,
+            duration: 500
+          }).start();
+    }
+
+    const transactionsUp = () => {
+        Animated.timing(transactionsBottom, {
+            toValue: 0,
+            duration: 1000
+          }).start();
+    }
+      
+      useEffect(() => {
+        fadeCard()
+        balanceDown()
+        transactionsUp()
+      }, [])
 
     const transactions = [
         {
@@ -124,7 +171,7 @@ const Home = () => {
     ]
     return (
         <MainContainer>
-            <BalanceContainer>
+            <BalanceContainer style={{top:balanceTop}}>
             <ImageBackground
                 source={require("../../assets/images/header.png")}
                 style={{
@@ -133,9 +180,9 @@ const Home = () => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
                   }}
-                  imageStyle={{ borderRadius: 20}}
+                  imageStyle={{ borderRadius: 40}}
                 >
                 <UserData>
                     <UserImage 
@@ -148,7 +195,11 @@ const Home = () => {
             </ImageBackground>
             </BalanceContainer>
 
-            <BalanceCard style={globalStyles.darkShadow}>
+            <BalanceCard style={[globalStyles.darkShadow,
+            {
+                left: leftCard,
+                opacity: opacityCard,
+            }]} >
             <ImageBackground
                 source={require("../../assets/images/balance.jpg")}
                 style={{
@@ -166,7 +217,7 @@ const Home = () => {
             </ImageBackground>
             </BalanceCard>
 
-            <TransactionsContainer style={globalStyles.articleShadow}>
+            <TransactionsContainer style={[globalStyles.darkShadow, {bottom: transactionsBottom}]}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                 <TransactionsHeader>
                     TRANSACTIONS

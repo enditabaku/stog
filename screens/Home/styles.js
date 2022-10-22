@@ -1,6 +1,7 @@
 import { Dimensions, Platform } from 'react-native';
 import styled from "styled-components"
 import { Colors } from "../../components/style"
+import { Animated } from 'react-native';
 
 export const MainContainer = styled.View`
     width: 100%;
@@ -9,14 +10,14 @@ export const MainContainer = styled.View`
     align-items: center;
 `
 
-export const BalanceContainer = styled.View`
+export const BalanceContainer = styled(Animated.View)`
     width: 100%;
     height: 40%;
     display: flex;
     align-items: center;
     padding-top: 50px;
     margin-top: -50px;
-    border-radius: 20px;
+    border-radius: 40px;
 `
 
 export const UserData = styled.View`
@@ -63,7 +64,7 @@ export const BalanceCards = styled.View`
     align-items: center;
 `
 
-export const BalanceCard = styled.View`
+export const BalanceCard = styled(Animated.View)`
     width: 80%;
     height: 170px;
     border-radius: 50px;
@@ -95,7 +96,7 @@ export const TransactionsHeader = styled.Text`
     text-align: center;
 `
 
-export const TransactionsContainer = styled.View`
+export const TransactionsContainer = styled(Animated.View)`
     width: 100%;
     height: 60%;
     border-radius: ${Platform.OS === "ios" ? '50px 50px 0 0': 50};
