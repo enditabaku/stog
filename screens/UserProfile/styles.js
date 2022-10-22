@@ -21,7 +21,7 @@ export const BalanceContainer = styled.View`
 
 export const UserData = styled.View`
     width: 100%;
-    height: 70%;
+    height: 30%;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -95,12 +95,12 @@ export const TransactionsHeader = styled.Text`
 `
 
 export const TransactionsContainer = styled.View`
-    width: 98%;
-    height: 100%;
+    width: 90%;
+    height: 50%;
     border-radius: ${Platform.OS === "ios" ? '50px 50px 0 0': 50};
     padding: 50px 0 25px 0;
-    margin-top: -40px;
-    background: ${Colors.transactionsBg};
+    margin-top: 0px;
+    background: ${Colors.white};
 `
 
 export const TransactionContainer = styled.View`

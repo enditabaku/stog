@@ -15,6 +15,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Welcome from './../screens/Welcome';
 import Home from "./../screens/Home";
 import Profile from "../screens/UserProfile";
+import Inquiries from "../screens/Inquiries";
 import Contracts from "../screens/Contracts";
 import Logout from './../screens/Logout'
 
@@ -79,7 +80,7 @@ const RootStack = () => {
           />
         <Tab.Screen
           name="Inquiries"
-          component={Home}
+          component={Inquiries}
           options={{
             tabBarIcon: () => (
               <View>
