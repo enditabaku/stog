@@ -19,6 +19,7 @@ export const Colors = {
   transactionRed: "#F63C28",
 
   white: '#fff',
+  whiteOpacity: '#ffffff50',
   black: '#000',
   castletonGreen: '#17625D',
   lightGrey: '#CACACA',
@@ -35,7 +36,7 @@ export const Colors = {
   randomGrey: '#595959'
 };
 
-const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen, darkred, randomGrey } = Colors;
+const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen, darkred, randomGrey, whiteOpacity } = Colors;
 
 /* //////////////////////////////////////////// */
 /* ////////// GENERAL STYLES /////////// */
