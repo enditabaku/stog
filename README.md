@@ -28,15 +28,16 @@ There are 6 important things you need to know about the project structure:
 * 6 main folders (assets, components, contexts, navigators, screens and utils)  
 
 ======= 
+
    App.js file
    
 It contains the first steps when the project is opened: checks for the stored credentials (if any) and opens the first screen from the RootStack: Login Screen
     
-    Package.json file
+   Package.json file
     
 It contains an object with the main project information, such as project name, project version, scripts to run the project and dependencies (packages installed) for the project
     
-    Main Folders
+   Main Folders
     
     * Assets => Two folders, images and fonts that are used in the project
     * Components => It contains global components for the project, in such case the global styles used
