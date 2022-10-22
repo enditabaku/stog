@@ -17,7 +17,7 @@ const Home = () => {
 
             <BalanceCard>
             <ImageBackground
-                source={require("../../assets/Images/balance.jpg")}
+                source={require("../../assets/images/balance.jpg")}
                 style={{
                     width: "100%",
                     height: "100%",

@@ -42,7 +42,6 @@ const RootStack = () => {
               headerShown: false,
               header: () => null,
             }}
-           initialRouteName="Home"
           >
             <>
                <Stack.Screen name="Welcome" component={Welcome} />

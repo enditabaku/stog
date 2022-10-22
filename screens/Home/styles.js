@@ -30,7 +30,7 @@ export const UserData = styled.View`
 export const UserImage = styled.Image`
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 50px;
 `
 
 export const UserTitles = styled.View`
