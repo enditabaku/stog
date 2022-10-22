@@ -1,7 +1,6 @@
+// core
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-
 // React Navigation
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -10,7 +9,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CredentialsContext } from "./../contexts/CredentialsContext";
 // async-storage
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+// icons
+import { Ionicons } from "@expo/vector-icons";
 // All Screens
 import Welcome from './../screens/Welcome';
 import Home from "./../screens/Home";
@@ -22,16 +22,16 @@ import Logout from './../screens/Logout'
 const Stack = createStackNavigator();
 
 const RootStack = () => {
-  const [hasUser, setHasUser] = useState();
+  const [hasUser, setHasUser] = useState(); // states if there is already a logged in user in the app
 
   useEffect(() => {
-    checkLoginCredentials();
+    checkLoginCredentials(); // first thing to do check if there are credentials stored
   }, [hasUser]);
 
   const checkLoginCredentials = () => {
-    AsyncStorage.getItem("credentials")
+    AsyncStorage.getItem("credentials") // get credentials
       .then((result) => {
-        if (result != null) {
+        if (result != null) { // if found results than we have a logged in user
           setHasUser(true);
         } else {
           setHasUser(false);
@@ -42,6 +42,8 @@ const RootStack = () => {
 
   const Tab = createBottomTabNavigator();
 
+  // Bottom tabs after login
+  // Here are all screens that are accessible only if user is logged in
   function MyTabs() {
     const navigation = useNavigation();
     return (
@@ -137,6 +139,7 @@ const RootStack = () => {
     );
   }
 
+  // Navigation Stack
   return (
     <CredentialsContext.Consumer>
       {({}) => (
@@ -148,6 +151,7 @@ const RootStack = () => {
             }}
           >
             <>
+            {/* Welcome or Login screen is the first screen that renders if no user is logged in */}
                <Stack.Screen name="Welcome" component={Welcome} />
                <Stack.Screen name="Home" component={MyTabs} />
             </>

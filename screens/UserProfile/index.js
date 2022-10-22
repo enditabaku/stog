@@ -1,4 +1,4 @@
-import { Text, Image, ImageBackground, ScrollView, View } from "react-native"
+import { ImageBackground } from "react-native"
 import {
     MainContainer, 
     BalanceContainer, 
@@ -7,39 +7,22 @@ import {
     UserImage, 
     UserBank, 
     UserTitles,
-    BalanceCard, 
-    BalanceHeader,
-    BalanceText,
+    StyledButton, 
+    LoginButtonText,
     TransactionsContainer,
-    TransactionCard,
-    TransactionAmount,
-    TransactionDate,
-    TransactionDescription,
-    TransactionContainer,
-    TransactionsHeader,
-    BalanceCards,
+    UpperText,
+    DataText
     } from "./styles"
-    import {
-        LoginContainer,
-        EyeIcon,
-        MsgBox,
-        StyledButton,
-        LoginButtonText,
-        StyledInputLabel,
-        StyledTextInput,
-        LoadingContainer,
-        Colors
-      } from "../../components/style";
 
 import { globalStyles } from "../../utils/globalStyles"
-import Formik from 'formik'
 
 const Profile = () => {
+
     return (
         <MainContainer>
             <BalanceContainer>
             <ImageBackground
-                source={require("../../assets/images/header.png")}
+                source={require("../../assets/images/bgbg-01.png")}
                 style={{
                     width: "100%",
                     height: "100%",
@@ -52,50 +35,40 @@ const Profile = () => {
                 >
                 <UserData>
                     <UserImage 
-                    source={require("../../assets/images/user.png")} />
+                      source={require("../../assets/images/user.png")}
+                    />
                     <UserTitles>
-                    <UserBank> Hello</UserBank>
+                    <UserBank> Welcome</UserBank>
                     <UserName> Ador Sula </UserName>
+                    <UserBank> This is your space</UserBank>
                     </UserTitles>
                 </UserData>
             <TransactionsContainer style={globalStyles.imageShadow}>
-              {/* <LoginContainer>
-                <Formik
-                //   onSubmit={() => {
-                //      navigation.push('Home');
-                //   }}
-                >
-                  {() => (
+            <ImageBackground
+                  source={require("../../assets/images/userprofile-01.png")}
+                  style={{
+                      width: "100%",
+                      height: "100%"
+                    }}
+                    imageStyle={{ borderRadius: 20}}
+                  >
                     <>
-                      <MyTextInput
-                        label="Username"
-                        placeholderTextColor='#000'
-                      />
-                      <MyTextInput
-                        label="Password"
-                        placeholderTextColor='#000'
-                        icon="lock"
-                        isPassword={true}
-                      />
+                      <DataText></DataText>
+                      <UpperText>Username: </UpperText><DataText>ador.sula</DataText>
+                      <UpperText>Name: </UpperText><DataText>Ador</DataText>
+                      <UpperText>Surname: </UpperText><DataText>Sula</DataText>
+                      <UpperText>Phone Number: </UpperText><DataText>+355 68 10 10 000</DataText>
+                      <UpperText>Institution: </UpperText><DataText>Tirana University</DataText>
+                      <StyledButton>
+                          <LoginButtonText>Edit Profile</LoginButtonText>
+                      </StyledButton>
                     </>
-                  )}
-                </Formik>
-              </LoginContainer> */}
+              </ImageBackground>
             </TransactionsContainer>
             </ImageBackground>
             </BalanceContainer>
         </MainContainer>
     )
 }
-
-const MyTextInput = ({
-  label,
-}) => {
-  return (
-    <>
-      <StyledInputLabel>{label}</StyledInputLabel>
-    </>
-  );
-};
 
 export default Profile

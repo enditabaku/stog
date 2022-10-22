@@ -44,9 +44,9 @@ export const UserTitles = styled.View`
 export const UserName = styled.Text`
     color: ${Colors.text};
     font-size: 36px;
-    font-family: sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+    font-family: 'Poppins-Black'
 `
 
 export const UserBank = styled.Text`
@@ -55,6 +55,7 @@ export const UserBank = styled.Text`
     font-size: 18px;
     font-weight: 200;
     padding-left: 10px;
+    font-family: 'Poppins-Regular'
 `
 export const BalanceCards = styled.View`
     width: 100%;
@@ -96,9 +97,8 @@ export const TransactionsHeader = styled.Text`
 
 export const TransactionsContainer = styled.View`
     width: 90%;
-    height: 50%;
+    height: 52%;
     border-radius: ${Platform.OS === "ios" ? '50px 50px 0 0': 50};
-    padding: 50px 0 25px 0;
     margin-top: 0px;
     background: ${Colors.white};
 `
@@ -136,3 +136,61 @@ export const TransactionDescription = styled.Text`
 export const TransactionAmount = styled.Text`
     font-weight: 800;
 `
+export const LoginContainer = styled.View`
+  width: 100%;
+  flex: 1;
+//   align-content: center;
+//   justify-content: center;
+//   align-items: center;
+  margin-top: 0px;
+`;
+
+export const UpperText = styled.Text`
+  color: ${Colors.black};
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 200;
+  padding-left: 30px;
+  font-family: 'Poppins-Light'
+`;
+
+export const DataText = styled.Text`
+  color: ${Colors.black};
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-family: 'Poppins-Regular'
+`;
+
+export const StyledTextInput = styled.TextInput`
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 16px;
+  height: 50px;
+  width: 85%;
+  margin-vertical: 3px;
+  margin-bottom: 5px;
+  color: ${Colors.darkGrey};
+  border: 1px solid ${Colors.whiteGrey}
+`;
+
+
+export const StyledButton = styled.TouchableOpacity`
+  padding: 5px 15px;
+  width: 40%;
+  background-color: ${Colors.darkred};
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-vertical: 5px;
+  height: 45px;
+  margin-horizontal: 30px;
+`;
+
+export const LoginButtonText = styled.Text`
+  color: ${Colors.white};
+  font-size: 14px;
+  font-family: 'Poppins-Medium'
+`;
