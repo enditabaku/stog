@@ -44,9 +44,9 @@ export const UserTitles = styled.View`
 export const UserName = styled.Text`
     color: ${Colors.text};
     font-size: 36px;
-    font-family: sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+    font-family: 'Poppins-Black'
 `
 
 export const UserBank = styled.Text`
@@ -55,6 +55,7 @@ export const UserBank = styled.Text`
     font-size: 18px;
     font-weight: 200;
     padding-left: 10px;
+    font-family: 'Poppins-Regular'
 `
 export const BalanceCards = styled.View`
     width: 100%;
@@ -147,18 +148,20 @@ export const LoginContainer = styled.View`
 export const UpperText = styled.Text`
   color: ${Colors.black};
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 200;
   padding-left: 30px;
+  font-family: 'Poppins-Light'
 `;
 
 export const DataText = styled.Text`
   color: ${Colors.black};
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   padding-left: 30px;
   padding-bottom: 10px;
+  font-family: 'Poppins-Regular'
 `;
 
 export const StyledTextInput = styled.TextInput`

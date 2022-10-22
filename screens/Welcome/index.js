@@ -10,7 +10,8 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
-  View
+  View,
+  Platform
 } from "react-native";
 import {
   LoginContainer,
@@ -94,15 +95,15 @@ const Login = () => {
   return (
     <>
     <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'position' : 'height'}
+        behavior={Platform.OS === 'ios' ? 'height' : 'height'}
         keyboardVerticalOffset={Platform.OS === 'ios' ? -60 : 0}
         style={{ flex: 1 }}
       >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
           <ImageBackground
-              source={require("../../assets/images/login.png")}
-              style={{width: Dimensions.get('window').width, height:'100%', marginTop: Platform.OS === 'ios' ? -50 : 0}}
+              source={require("../../assets/images/login-01.png")}
+              style={{width: Dimensions.get('window').width, height: Platform.OS == 'ios' ? Dimensions.get('window').height : '100%', marginTop: Platform.OS === 'ios' ? -50 : 0}}
             >
               <LoginContainer>
                 <Formik

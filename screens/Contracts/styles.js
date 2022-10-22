@@ -44,9 +44,9 @@ export const UserTitles = styled.View`
 export const UserName = styled.Text`
     color: ${Colors.text};
     font-size: 36px;
-    font-family: sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+    font-family: 'Poppins-Regular'
 `
 
 export const UserBank = styled.Text`
@@ -55,6 +55,7 @@ export const UserBank = styled.Text`
     font-size: 18px;
     font-weight: 200;
     padding-left: 10px;
+    font-family: 'Poppins-Regular'
 `
 export const BalanceCards = styled.View`
     width: 100%;
@@ -84,6 +85,7 @@ export const BalanceText = styled.Text`
     color: ${Colors.randomGrey};
     font-size: 30px;
     font-weight: 600;
+    font-family: 'Poppins-Regular'
 `
 
 export const TransactionsHeader = styled.Text`

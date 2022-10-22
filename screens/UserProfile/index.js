@@ -1,4 +1,4 @@
-import { Text, Image, ImageBackground, ScrollView, View } from "react-native"
+import { ImageBackground } from "react-native"
 import {
     MainContainer, 
     BalanceContainer, 
@@ -15,10 +15,9 @@ import {
     } from "./styles"
 
 import { globalStyles } from "../../utils/globalStyles"
-// formik
-import { Formik } from "formik";
 
 const Profile = () => {
+
     return (
         <MainContainer>
             <BalanceContainer>
@@ -36,7 +35,8 @@ const Profile = () => {
                 >
                 <UserData>
                     <UserImage 
-                    source={require("../../assets/images/user.png")} />
+                      source={require("../../assets/images/user.png")}
+                    />
                     <UserTitles>
                     <UserBank> Welcome</UserBank>
                     <UserName> Ador Sula </UserName>

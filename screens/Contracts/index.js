@@ -7,17 +7,9 @@ import {
     UserImage, 
     UserBank, 
     UserTitles,
-    BalanceCard, 
-    BalanceHeader,
     BalanceText,
     TransactionsContainer,
-    TransactionCard,
-    TransactionAmount,
-    TransactionDate,
-    TransactionDescription,
     TransactionContainer,
-    TransactionsHeader,
-    BalanceCards,
     } from "./styles"
 
 import { globalStyles } from "../../utils/globalStyles"

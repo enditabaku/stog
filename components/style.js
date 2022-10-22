@@ -150,11 +150,13 @@ export const StyledButton = styled.TouchableOpacity`
   border-radius: 10px;
   margin-vertical: 2px;
   height: 55px;
+  font-family: 'Poppins-Medium'
 `;
 
 export const LoginButtonText = styled.Text`
   color: ${white};
   font-size: ${responsiveSize(14)};
+  font-family: 'Poppins-Regular'
 `;
 
 export const StyledTextInput = styled.TextInput`
@@ -173,6 +175,7 @@ export const StyledTextInput = styled.TextInput`
 export const StyledInputLabel = styled.Text`
   color: ${white};
   font-size: ${responsiveSize(13)};
+  font-family: 'Poppins-Regular'
 `;
 
 /* //////////////////////////////////////////// */
