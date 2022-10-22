@@ -108,13 +108,13 @@ const Login = () => {
                 <Formik
                   initialValues={{ username: "", password: "" }}
                   onSubmit={(values, { setSubmitting }) => {
-                    if (values.username == "" || values.password == "") {
-                      handleMessage("Ju lutem plotësoni të gjitha fushat!");
-                      setSubmitting(false);
-                    } else {
-                      handleLogin(values, setSubmitting);
-                    }
-                    // navigation.navigate('Home');
+                    // if (values.username == "" || values.password == "") {
+                    //   handleMessage("Ju lutem plotësoni të gjitha fushat!");
+                    //   setSubmitting(false);
+                    // } else {
+                    //   handleLogin(values, setSubmitting);
+                    // }
+                     navigation.push('Home');
                   }}
                 >
                   {({

@@ -125,14 +125,27 @@ const Home = () => {
     return (
         <MainContainer>
             <BalanceContainer>
-            <UserData>
-                <UserImage 
-                source={require("../../assets/icon.png")} />
-                <UserTitles>
-                <UserBank> Raifaissen Bank</UserBank>
-                <UserName> Ador Sula </UserName>
-                </UserTitles>
-            </UserData>
+            <ImageBackground
+                source={require("../../assets/images/header.png")}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                  imageStyle={{ borderRadius: 20}}
+                >
+                <UserData>
+                    <UserImage 
+                        source={require("../../assets/images/user.png")} />
+                    <UserTitles>
+                    <UserBank> Raifaissen Bank</UserBank>
+                    <UserName> Ador Sula </UserName>
+                    </UserTitles>
+                </UserData>
+            </ImageBackground>
             </BalanceContainer>
 
             <BalanceCard style={globalStyles.darkShadow}>

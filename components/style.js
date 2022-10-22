@@ -31,11 +31,11 @@ export const Colors = {
   lightGreenOpacity: '#CFDFDA90',
   red: '#f05050',
   strongGreen: '#12ac7a',
-  darkred: '#c11d1e'
-
+  darkred: '#c11d1e',
+  randomGrey: '#595959'
 };
 
-const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen, darkred } = Colors;
+const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen, darkred, randomGrey } = Colors;
 
 /* //////////////////////////////////////////// */
 /* ////////// GENERAL STYLES /////////// */

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 // React Navigation
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
@@ -12,6 +14,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // All Screens
 import Welcome from './../screens/Welcome';
 import Home from "./../screens/Home";
+import Profile from "../screens/UserProfile";
+import Contracts from "../screens/Contracts";
 import Logout from './../screens/Logout'
 
 const Stack = createStackNavigator();
@@ -41,19 +45,92 @@ const RootStack = () => {
     const navigation = useNavigation();
     return (
       <Tab.Navigator screenOptions={{ headerShown: false }}>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Inquiries" component={Home} />
-        <Tab.Screen name="Contracts" component={Home} />
-        <Tab.Screen name="Logout" component={Logout}
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarIcon: () => (
+              <View>
+                <Ionicons
+                  // style={focused ? styles.focused : styles.icon}
+                  name="home"
+                  size={20}
+                  color='#2a2d2d'
+                />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarIcon: () => (
+              <View>
+                <Ionicons
+                  // style={focused ? styles.focused : styles.icon}
+                  name="person"
+                  size={20}
+                  color='#2a2d2d'
+                />
+              </View>
+            ),
+          }}
+          />
+        <Tab.Screen
+          name="Inquiries"
+          component={Home}
+          options={{
+            tabBarIcon: () => (
+              <View>
+                <Ionicons
+                  // style={focused ? styles.focused : styles.icon}
+                  name="document"
+                  size={20}
+                  color='#2a2d2d'
+                />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Contracts"
+          component={Contracts}
+          options={{
+            tabBarIcon: () => (
+              <View>
+                <Ionicons
+                  // style={focused ? styles.focused : styles.icon}
+                  name="folder"
+                  size={20}
+                  color='#2a2d2d'
+                />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen name="Logout"
+          component={Logout}
           listeners={() => ({
             tabPress: () => {
-              console.log('erdhi')
                AsyncStorage.removeItem('credentials')
               .then(() => {
                 navigation.push('Welcome')
               })
             },
           })}
+          options={{
+            tabBarIcon: () => (
+              <View>
+                <Ionicons
+                  // style={focused ? styles.focused : styles.icon}
+                  name="log-out"
+                  size={20}
+                  color='#2a2d2d'
+                />
+              </View>
+            ),
+          }}
         />
       </Tab.Navigator>
     );

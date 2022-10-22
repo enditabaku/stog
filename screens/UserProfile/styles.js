@@ -4,19 +4,19 @@ import { Colors } from "../../components/style"
 
 export const MainContainer = styled.View`
     width: 100%;
-    height: 100%;
+    height: 110%;
     display: flex;
     align-items: center;
 `
 
 export const BalanceContainer = styled.View`
     width: 100%;
-    height: 40%;
+    height: 100%;
     display: flex;
     align-items: center;
     padding-top: 50px;
     margin-top: -50px;
-    border-radius: 20px;
+    border-radius: ${Platform.OS === "ios" ? '0 0 20px 20px': 20};
 `
 
 export const UserData = styled.View`
@@ -65,7 +65,6 @@ export const BalanceCards = styled.View`
 
 export const BalanceCard = styled.View`
     width: 80%;
-    height: 170px;
     border-radius: 50px;
     position: relative;
     bottom: 50px;
@@ -76,15 +75,15 @@ export const BalanceCard = styled.View`
 `
 
 export const BalanceHeader = styled.Text`
-    color: ${Colors.text};
+    color: ${Colors.darkGrey};
     font-size: 24px;
     font-weight: 300;
 `
 
 export const BalanceText = styled.Text`
-    color: ${Colors.text};
-    font-size: 32px;
-    font-weight: 800;
+    color: ${Colors.randomGrey};
+    font-size: 30px;
+    font-weight: 600;
 `
 
 export const TransactionsHeader = styled.Text`
@@ -96,20 +95,23 @@ export const TransactionsHeader = styled.Text`
 `
 
 export const TransactionsContainer = styled.View`
-    width: 100%;
-    height: 60%;
+    width: 98%;
+    height: 100%;
     border-radius: ${Platform.OS === "ios" ? '50px 50px 0 0': 50};
-    padding: 10px 0 25px 0;
+    padding: 50px 0 25px 0;
+    margin-top: -40px;
     background: ${Colors.transactionsBg};
 `
 
 export const TransactionContainer = styled.View`
     display: flex;
-    width: 100%;
+    width: auto;
     flex-direction: column;
     padding-right: 20px;
     padding-left: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    height: 150px;
 `
 
 export const TransactionDate = styled.Text`
@@ -129,7 +131,6 @@ export const TransactionCard = styled.View`
 export const TransactionDescription = styled.Text`
     font-size: 14px;
     font-weight: 600;
-    color: ${Colors.darkGrey};
 `
 
 export const TransactionAmount = styled.Text`
