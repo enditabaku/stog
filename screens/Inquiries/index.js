@@ -4,6 +4,7 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import Startups from './components/Startups';
 import Education from './components/Education';
 import { MainContainer } from "./styles"
+import { Colors } from '../../components/style';
 const renderScene = SceneMap({
     education: Education,
     startups: Startups,
@@ -30,12 +31,12 @@ const Inquiries = () => {
                           {...props}
                           renderLabel={({ route }) => (
                             <View>
-                              <Text style={{fontSize: '18px'}}>
+                              <Text style={{fontSize: '16px', fontFamily: "Poppins-Regular"}}>
                               {route.title}
                               </Text>
                               </View>
                           )}
-                          style={{backgroundColor: '#A9F0D1', borderRadius: 20, marginLeft: 10, marginRight: 10, top: 10}}
+                          style={{backgroundColor: 'transparent'}}
                         />
                       )}                 
                 />

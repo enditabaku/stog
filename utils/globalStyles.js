@@ -33,12 +33,12 @@ export const globalStyles = StyleSheet.create({
         elevation: 10,
     },
     cardShadow: {
-        shadowColor: "#E3E3E3",
+        shadowColor: "#474747",
         shadowOffset: {
             width: 0,
             height:5,
         },
-        shadowOpacity: 0.20,
+        shadowOpacity: 0.40,
         shadowRadius: 7,
         elevation: 10,
     },

@@ -68,7 +68,6 @@ export const InquiryDate = styled.Text`
     font-size: 12px;
 `
 
-
 export const InquiryTitle = styled.Text`
     font-family: "Poppins-ExtraBold";
     font-size: 22px;
