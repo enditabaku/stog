@@ -101,7 +101,7 @@ const Login = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
           <ImageBackground
-              source={require("../../assets/images/login.png")}
+              source={require("../../assets/images/login-01.png")}
               style={{width: Dimensions.get('window').width, height:'100%', marginTop: Platform.OS === 'ios' ? -50 : 0}}
             >
               <LoginContainer>

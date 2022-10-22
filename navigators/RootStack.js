@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 // React Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // credentials context
 import { CredentialsContext } from "./../contexts/CredentialsContext";
 // async-storage
@@ -33,6 +34,19 @@ const RootStack = () => {
       .catch((error) => console.log(error));
   };
 
+  const Tab = createBottomTabNavigator();
+
+  function MyTabs() {
+    return (
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Inquiries" component={Home} />
+        <Tab.Screen name="Contracts" component={Home} />
+        <Tab.Screen name="Logout" component={Home} />
+      </Tab.Navigator>
+    );
+  }
+
   return (
     <CredentialsContext.Consumer>
       {({}) => (
@@ -45,7 +59,7 @@ const RootStack = () => {
           >
             <>
                <Stack.Screen name="Welcome" component={Welcome} />
-               <Stack.Screen name="Home" component={Home} />
+               <Stack.Screen name="Home" component={MyTabs} />
             </>
           </Stack.Navigator>
         </NavigationContainer>

@@ -27,11 +27,12 @@ export const Colors = {
   dark: '#0d4c48',
   lightGreenOpacity: '#CFDFDA90',
   red: '#f05050',
-  strongGreen: '#12ac7a'
+  strongGreen: '#12ac7a',
+  darkred: '#c11d1e'
 
 };
 
-const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen } = Colors;
+const { primary, secondary, text, white, black, castletonGreen, lightGrey, darkGrey, whiteGrey, orange, transparentGreen, lightGreen, lightGreenOpacity, dark, red, strongGreen, darkred } = Colors;
 
 /* //////////////////////////////////////////// */
 /* ////////// GENERAL STYLES /////////// */
@@ -46,7 +47,7 @@ export const CenterContainer = styled.View`
 
 export const LogoutButton = styled.TouchableOpacity`
   border-radius: 50px;
-  background-color: ${primary};
+  background-color: ${castletonGreen};
   width: 70px;
   height: 70px;
   position: absolute;
@@ -119,11 +120,12 @@ export const LoginContainer = styled.View`
   align-content: center;
   justify-content: center;
   align-items: center;
+  margin-top: ${responsiveSize(200)};
 `;
 
 export const EyeIcon = styled.TouchableOpacity`
   right: 20%;
-  padding-top: 15px;
+  padding-top: 25px;
   position: absolute;
   z-index: 1;
 `;
@@ -135,31 +137,33 @@ export const MsgBox = styled.Text`
 `;
 
 export const StyledButton = styled.TouchableOpacity`
-  padding: 15px;
+  padding: 5px 15px;
   width: 70%;
-  background-color: ${orange};
+  background-color: ${red};
+  border-radius: 1px solid ${darkred}
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin-vertical: 5px;
-  height: 60px;
+  margin-vertical: 2px;
+  height: 55px;
 `;
 
 export const LoginButtonText = styled.Text`
   color: ${white};
-  font-size: ${responsiveSize(16)};
+  font-size: ${responsiveSize(14)};
 `;
 
 export const StyledTextInput = styled.TextInput`
-  padding: 15px;
-  border-radius: 10px;
-  border: 2px solid ${lightGrey};
+  padding: 5px 10px;
+  border-radius: 15px;
   font-size: ${responsiveSize(16)};
   height: 60px;
   width: 70%;
   margin-vertical: 3px;
-  margin-bottom: 10px;
-  color: ${white};
+  margin-bottom: 5px;
+  color: ${darkGrey};
+  background:${white};
+  opacity: 0.8;
 `;
 
 export const StyledInputLabel = styled.Text`
