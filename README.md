@@ -1,5 +1,5 @@
 # STOG
-![Image](https://github.com/enditabaku/stog/tree/master/assets/images/stog-logo-transparent.png)
+![Image](https://github.com/enditabaku/stog/blob/master/assets/Images/stog-logo-transparent.png)
 
 ======= 
    Student Cog
