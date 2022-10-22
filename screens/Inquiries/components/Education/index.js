@@ -89,8 +89,8 @@ const Education = () => {
                         alignContent: "center",
 }}>
                         {
-                            inquiries.map((inquiry) => (
-                                <Inquiry>
+                            inquiries.map((inquiry, i) => (
+                                <Inquiry key={i}>
                                     <InquiryDate>
                                         Applied on {inquiry.date}
                                     </InquiryDate>
