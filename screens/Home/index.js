@@ -188,7 +188,7 @@ const Home = () => {
                     <UserImage 
                         source={require("../../assets/images/user.png")} />
                     <UserTitles>
-                    <UserBank> Raifaissen Bank</UserBank>
+                    <UserBank> Raifeissen Bank</UserBank>
                     <UserName> Ador Sula </UserName>
                     </UserTitles>
                 </UserData>
@@ -212,7 +212,7 @@ const Home = () => {
                   }}
                   imageStyle={{ borderRadius: 20}}
                 >
-                  <BalanceHeader>BALANCE</BalanceHeader>
+                  <BalanceHeader>Balance</BalanceHeader>
                   <BalanceText>56,432.00 LEK</BalanceText>
             </ImageBackground>
             </BalanceCard>
@@ -220,7 +220,7 @@ const Home = () => {
             <TransactionsContainer style={[globalStyles.darkShadow, {bottom: transactionsBottom}]}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                 <TransactionsHeader>
-                    TRANSACTIONS
+                    Transactions
                 </TransactionsHeader>
 
                 <View style={{height: 30}} />

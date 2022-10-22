@@ -44,18 +44,17 @@ export const UserTitles = styled.View`
 
 export const UserName = styled.Text`
     color: ${Colors.text};
-    font-size: 36px;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-size: 38px;
+    font-family: 'Poppins-ExtraBold';
 `
 
 export const UserBank = styled.Text`
     color: lightgray;
-    text-transform: uppercase;
     font-size: 18px;
     font-weight: 200;
-    padding-left: 10px;
+    padding-left: 5px;
+    font-family: 'Poppins-Light';
+    margin-bottom: -10;
 `
 export const BalanceCards = styled.View`
     width: 100%;
@@ -80,12 +79,14 @@ export const BalanceHeader = styled.Text`
     color: ${Colors.text};
     font-size: 24px;
     font-weight: 300;
+    font-family: 'Poppins-ExtraLight';
 `
 
 export const BalanceText = styled.Text`
     color: ${Colors.text};
     font-size: 32px;
     font-weight: 800;
+    font-family: 'Poppins-ExtraBold';
 `
 
 export const TransactionsHeader = styled.Text`
@@ -94,6 +95,7 @@ export const TransactionsHeader = styled.Text`
     font-weight: 800;
     padding-top: 10px;
     text-align: center;
+    font-family: 'Poppins-ExtraBold';
 `
 
 export const TransactionsContainer = styled(Animated.View)`
@@ -117,6 +119,7 @@ export const TransactionDate = styled.Text`
     color: ${Colors.black};
     font-size: 12px;
     padding-left: 5px;
+    font-family: 'Poppins-ExtraBold';
 `
 
 export const TransactionCard = styled.View`
@@ -129,10 +132,10 @@ export const TransactionCard = styled.View`
 
 export const TransactionDescription = styled.Text`
     font-size: 14px;
-    font-weight: 600;
+    font-family: 'Poppins-Regular';
     color: ${Colors.darkGrey};
 `
 
 export const TransactionAmount = styled.Text`
-    font-weight: 800;
+    font-family: 'Poppins-ExtraBold';
 `
