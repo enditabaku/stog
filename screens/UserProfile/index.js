@@ -16,6 +16,7 @@ import {
 
 import { globalStyles } from "../../utils/globalStyles"
 
+// User can view, add, edit or delete their information from this page
 const Profile = () => {
 
     return (

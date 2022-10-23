@@ -13,6 +13,8 @@ import { MainContainer,
     InquiryInfoTextUnderlined,
     InquiryDate
 } from "./styles"
+
+// Imported to get the drop shadows
 import { globalStyles } from '../../../../utils/globalStyles';
 
 
@@ -79,6 +81,8 @@ const Education = () => {
                     <HeaderText>
                         My Startups
                     </HeaderText>
+
+                    {/* Lists all existing startups the user has appled for, including the pending rejected ones */}
                     <Inquiries>
                         <ScrollView showsVerticalScrollIndicator={false}
 

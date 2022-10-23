@@ -78,8 +78,8 @@ const Contracts = () => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{height: 10}} />
                   {
-                    transactions.map((transaction) => (
-                        <>
+                    transactions.map((transaction, i) => (
+                        <View key={i}>
                             <TransactionContainer>
                                 <ImageBackground
                                     source={require("../../assets/images/contract1(1).jpg")}
@@ -96,7 +96,7 @@ const Contracts = () => {
                                         <BalanceText>15/09 Startup</BalanceText>
                                 </ImageBackground>
                             </TransactionContainer>
-                        </>
+                        </View>
                     ))
                   }
                   

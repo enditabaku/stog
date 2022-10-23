@@ -4,7 +4,6 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import Startups from './components/Startups';
 import Education from './components/Education';
 import { MainContainer } from "./styles"
-import { Colors } from '../../components/style';
 const renderScene = SceneMap({
     education: Education,
     startups: Startups,
@@ -21,6 +20,7 @@ const Inquiries = () => {
     return (
         <MainContainer>
             <View style={{ flex: 2 }}>
+              {/* Tabs to switch back and forth from education and startup inquiries */}
                 <TabView
                     navigationState={{ index, routes }}
                     renderScene={renderScene}
