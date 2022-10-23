@@ -1,4 +1,5 @@
 import { ImageBackground } from "react-native"
+import { useEffect, useState, useContext } from "react"
 import {
     MainContainer, 
     BalanceContainer, 
@@ -15,8 +16,35 @@ import {
     } from "./styles"
 
 import { globalStyles } from "../../utils/globalStyles"
+import { CredentialsContext } from "../../contexts/CredentialsContext";
+import axios from 'axios';
 
 const Profile = () => {
+
+  const { storedCredentials } = useContext(CredentialsContext)
+  const [userData, setUserData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const getUserData = async () => {
+    setIsLoading(true)
+    try{
+        const uri ='http://pragmaticsteam-001-site1.atempurl.com/api/Authentication/CurrentUser'
+        const result = await axios.get(uri, {
+            headers: { Authorization: `Bearer ${storedCredentials}` }
+        })
+        if (result.status === 200) {
+            setUserData(result.data)
+        }
+    } catch (error){
+        console.log(error.response)
+    }
+    setIsLoading(false)
+}
+  
+  useEffect(() => {
+    getUserData()
+  }, [isLoading])
 
     return (
         <MainContainer>
@@ -39,7 +67,7 @@ const Profile = () => {
                     />
                     <UserTitles>
                     <UserBank> Welcome</UserBank>
-                    <UserName> Ador Sula </UserName>
+                    <UserName> {userData?.fullName} </UserName>
                     <UserBank> This is your space</UserBank>
                     </UserTitles>
                 </UserData>
@@ -54,11 +82,12 @@ const Profile = () => {
                   >
                     <>
                       <DataText></DataText>
-                      <UpperText>Username: </UpperText><DataText>ador.sula</DataText>
-                      <UpperText>Name: </UpperText><DataText>Ador</DataText>
-                      <UpperText>Surname: </UpperText><DataText>Sula</DataText>
+                      <UpperText>Username: </UpperText><DataText>{userData?.userName}</DataText>
+                      <UpperText>FirstName: </UpperText><DataText>{userData?.firstName}</DataText>
+                      <UpperText>LastName: </UpperText><DataText>{userData?.lastName}</DataText>
+                      <UpperText>Email: </UpperText><DataText>{userData?.email}</DataText>
                       <UpperText>Phone Number: </UpperText><DataText>+355 68 10 10 000</DataText>
-                      <UpperText>Institution: </UpperText><DataText>Tirana University</DataText>
+                      {/* <UpperText>Institution: </UpperText><DataText>Tirana University</DataText> */}
                       <StyledButton>
                           <LoginButtonText>Edit Profile</LoginButtonText>
                       </StyledButton>

@@ -129,7 +129,7 @@ export const LoginContainer = styled.View`
 
 export const EyeIcon = styled.TouchableOpacity`
   right: 20%;
-  padding-top: 25px;
+  padding-top: 0px;
   position: absolute;
   z-index: 1;
 `;
@@ -150,6 +150,18 @@ export const StyledButton = styled.TouchableOpacity`
   border-radius: 10px;
   margin-vertical: 2px;
   height: 55px;
+  font-family: 'Poppins-Medium'
+`;
+
+export const RegisterButton = styled.TouchableOpacity`
+  padding: 5px 15px;
+  width: 70%;
+  border: 2px solid ${red}
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 5px;
+  height: 40px;
   font-family: 'Poppins-Medium'
 `;
 
