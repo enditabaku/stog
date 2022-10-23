@@ -97,7 +97,7 @@ export const TransactionsHeader = styled.Text`
 
 export const TransactionsContainer = styled.View`
     width: 90%;
-    height: 52%;
+    height: 57%;
     border-radius: ${Platform.OS === "ios" ? '50px 50px 0 0': 50};
     margin-top: 0px;
     background: ${Colors.white};

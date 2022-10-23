@@ -16,7 +16,7 @@ export const BalanceContainer = styled(Animated.View)`
     display: flex;
     align-items: center;
     padding-top: 50px;
-    margin-top: -50px;
+    margin-top: -57px;
     border-radius: 40px;
 `
 

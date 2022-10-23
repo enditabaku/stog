@@ -1,4 +1,5 @@
 import { Text, Image, ImageBackground, ScrollView, View } from "react-native"
+import { useEffect, useState, useContext } from "react"
 import {
     MainContainer, 
     BalanceContainer, 
@@ -13,7 +14,33 @@ import {
     } from "./styles"
 
 import { globalStyles } from "../../utils/globalStyles"
+import { CredentialsContext } from "../../contexts/CredentialsContext";
+import axios from 'axios';
+
 const Contracts = () => {
+
+    const { storedCredentials } = useContext(CredentialsContext)
+    const [userData, setUserData] = useState(null);
+  
+  
+    const getUserData = async () => {
+      try{
+          const uri ='http://pragmaticsteam-001-site1.atempurl.com/api/Authentication/CurrentUser'
+          const result = await axios.get(uri, {
+              headers: { Authorization: `Bearer ${storedCredentials}` }
+          })
+          if (result.status === 200) {
+              setUserData(result.data)
+          }
+      } catch (error){
+          console.log(error.response)
+      }
+  }
+    
+    useEffect(() => {
+      getUserData()
+    }, [])
+
     const transactions = [
         {
             id: "234234234234324234234",
@@ -48,6 +75,7 @@ const Contracts = () => {
             studentId: "2131234213123",
         },
     ]
+
     return (
         <MainContainer>
             <BalanceContainer>
@@ -67,7 +95,7 @@ const Contracts = () => {
                     <UserImage 
                     source={require("../../assets/images/contract.png")} />
                     <UserTitles>
-                    <UserBank> Ador Sula</UserBank>
+                    <UserBank> {userData?.fullName}</UserBank>
                     <UserName> Contracts </UserName>
                     </UserTitles>
                 </UserData>

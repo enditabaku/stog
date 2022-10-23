@@ -23,11 +23,9 @@ const Profile = () => {
 
   const { storedCredentials } = useContext(CredentialsContext)
   const [userData, setUserData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
 
   const getUserData = async () => {
-    setIsLoading(true)
     try{
         const uri ='http://pragmaticsteam-001-site1.atempurl.com/api/Authentication/CurrentUser'
         const result = await axios.get(uri, {
@@ -39,12 +37,11 @@ const Profile = () => {
     } catch (error){
         console.log(error.response)
     }
-    setIsLoading(false)
 }
   
   useEffect(() => {
     getUserData()
-  }, [isLoading])
+  }, [])
 
     return (
         <MainContainer>
@@ -91,6 +88,7 @@ const Profile = () => {
                       <StyledButton>
                           <LoginButtonText>Edit Profile</LoginButtonText>
                       </StyledButton>
+                      <DataText></DataText>
                     </>
               </ImageBackground>
             </TransactionsContainer>

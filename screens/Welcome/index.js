@@ -79,7 +79,7 @@ const Login = () => {
     await AsyncStorage.setItem('credentials', data.token)
        .then(() => {
          setStoredCredentials(data.token); //store credentials
-         navigation.navigate('Home');
+         navigation.push('Home');
        })
       .catch((error) => {
          Alert.alert("", "There was a problem trying to login. Please try again!");
@@ -113,13 +113,13 @@ const Login = () => {
                 <Formik
                   initialValues={{ username: "", password: "" }}
                   onSubmit={(values, { setSubmitting }) => {
-                    // if (values.username == "" || values.password == "") {
-                    //   handleMessage("Please fill all the above fields!");
-                    //   setSubmitting(false);
-                    // } else {
-                    //   handleLogin(values, setSubmitting);
-                    // }
-                    navigation.navigate('Home');
+                    if (values.username == "" || values.password == "") {
+                      handleMessage("Please fill all the above fields!");
+                      setSubmitting(false);
+                    } else {
+                      handleLogin(values, setSubmitting);
+                    }
+                    // navigation.navigate('Home');
                   }}
                 >
                   {({
