@@ -31,7 +31,7 @@ const Inquiries = () => {
                           {...props}
                           renderLabel={({ route }) => (
                             <View>
-                              <Text style={{fontSize: '16px', fontFamily: "Poppins-Regular"}}>
+                              <Text style={{fontSize: 16, fontFamily: "Poppins-Regular"}}>
                               {route.title}
                               </Text>
                               </View>

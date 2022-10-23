@@ -14,10 +14,10 @@ export const NewButton = styled.TouchableOpacity`
   padding: 5px 15px;
   width: 70%;
   background-color: ${Colors.red};
-  border-radius: 1px solid ${Colors.darkred};
+  border: 1px solid ${Colors.darkred};
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50px;
   height: 55px;
 `
 
@@ -58,7 +58,7 @@ export const Inquiry = styled.View`
     border-radius: 10px;
     min-width: 90%;
     max-width: 90%;
-    height: 150px;
+    height: auto;
     margin: 20px 0 20px 0;
     padding: 20px;
     background: #DDE4E3;
