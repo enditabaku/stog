@@ -22,6 +22,7 @@ import {
   StyledInputLabel,
   StyledTextInput,
   LoadingContainer,
+  RegisterButton,
   Colors
 } from "../../components/style";
 //colors
@@ -56,25 +57,28 @@ const Login = () => {
       try {
         //posla url api for login 
       setSubmitting(true);    
-        const url = 'https://fiskalizimi-dev-api.herokuapp.com/api/user/login';
+        const url = 'http://pragmaticsteam-001-site1.atempurl.com/api/Authentication/login';
         const result = await axios.post(url, credentials, {
           headers: {
             'Content-Type': 'application/json',
           }
         })
-        if (result.status === 200) persistLogin(result.data) //if credentials are okay
+        if (result.status === 200) {
+          persistLogin(result.data) //if credentials are okay
+        }
       } catch (err) {
         setSubmitting(false);
-        Alert.alert("", err.response.data.message);
+        if(err.response.data.text){Alert.alert("", err.response.data.text);}
+        else{Alert.alert("", "There was a problem trying to login. Please try again!");}
+        
       }
   };
 
   // Persisting login: After axios post request ↑
   const persistLogin = async (data) => {
-    await AsyncStorage.setItem('credentials', data.data)
+    await AsyncStorage.setItem('credentials', data.token)
        .then(() => {
-         const decoded = jwt_decode(data.data);
-         setStoredCredentials(decoded); //store credentials
+         setStoredCredentials(data.token); //store credentials
          navigation.navigate('Home');
        })
       .catch((error) => {
@@ -110,12 +114,12 @@ const Login = () => {
                   initialValues={{ username: "", password: "" }}
                   onSubmit={(values, { setSubmitting }) => {
                     // if (values.username == "" || values.password == "") {
-                    //   handleMessage("Ju lutem plotësoni të gjitha fushat!");
+                    //   handleMessage("Please fill all the above fields!");
                     //   setSubmitting(false);
                     // } else {
                     //   handleLogin(values, setSubmitting);
                     // }
-                     navigation.push('Home');
+                    navigation.navigate('Home');
                   }}
                 >
                   {({
@@ -157,6 +161,9 @@ const Login = () => {
                           <ActivityIndicator size="large" color={white} />
                         </StyledButton>
                       )}
+                        <RegisterButton>
+                          <LoginButtonText>Register Now</LoginButtonText>
+                        </RegisterButton>
                     </>
                   )}
                 </Formik>

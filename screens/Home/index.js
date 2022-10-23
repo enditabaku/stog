@@ -1,6 +1,5 @@
 import { Text, Image, ImageBackground, ScrollView, View, Animated } from "react-native"
-import { useEffect, useRef } from "react"
-
+import { useEffect, useRef, useContext, useState } from "react"
 import { MainContainer, 
     BalanceContainer, 
     UserData,
@@ -21,10 +20,14 @@ import { MainContainer,
     BalanceCards,
     } from "./styles"
 
-    import { globalStyles } from "../../utils/globalStyles"
+import { globalStyles } from "../../utils/globalStyles"
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { CredentialsContext } from "../../contexts/CredentialsContext";
 
 const Home = () => {
-
+    const { storedCredentials } = useContext(CredentialsContext)
+    const [userData, setUserData] = useState(null);
     // Values to animate balance card
     const opacityCard = useRef(new Animated.Value(0)).current;
     const leftCard = useRef(new Animated.Value(0)).current;
@@ -66,9 +69,22 @@ const Home = () => {
           }).start();
     }
 
-
-    // Executes all animation functions on initial load  
+    const getUserData = async () => {
+        try{
+            const uri ='http://pragmaticsteam-001-site1.atempurl.com/api/Authentication/CurrentUser'
+            const result = await axios.get(uri, {
+                headers: { Authorization: `Bearer ${storedCredentials}` }
+            })
+            if (result.status === 200) {
+                setUserData(result.data)
+            }
+        } catch (error){
+            console.log(error.response)
+        }
+    }
+      
       useEffect(() => {
+        getUserData()
         fadeCard()
         balanceDown()
         transactionsUp()
@@ -172,6 +188,7 @@ const Home = () => {
             studentId: "2131234213123",
         },
     ]
+
     return (
         <MainContainer>
             <BalanceContainer style={{top:balanceTop}}>
@@ -192,7 +209,7 @@ const Home = () => {
                         source={require("../../assets/images/user.png")} />
                     <UserTitles>
                     <UserBank> Raifeissen Bank</UserBank>
-                    <UserName> Ador Sula </UserName>
+                    <UserName> {userData?.fullName} </UserName>
                     </UserTitles>
                 </UserData>
             </ImageBackground>

@@ -44,7 +44,7 @@ export const UserTitles = styled.View`
 
 export const UserName = styled.Text`
     color: ${Colors.text};
-    font-size: 38px;
+    font-size: 30px;
     font-family: 'Poppins-ExtraBold';
 `
 

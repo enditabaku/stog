@@ -16,6 +16,8 @@ import { MainContainer,
 
 // Imported to get the drop shadows
 import { globalStyles } from '../../../../utils/globalStyles';
+//navigation
+import { useNavigation } from '@react-navigation/native';
 
 
 const inquiries = [
@@ -69,10 +71,11 @@ const inquiries = [
     },
 
 ]
-const Education = () => {
+const StartUps = () => {
+    const navigation = useNavigation();
     return (
         <MainContainer>
-                <NewButton>
+                <NewButton onPress={navigation.push("NewInquiry")}>
                     <ButtonText>
                     New Startup
                     </ButtonText>
@@ -134,4 +137,4 @@ const Education = () => {
 }
 
 
-export default Education;
+export default StartUps;
