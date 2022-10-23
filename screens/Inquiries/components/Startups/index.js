@@ -75,9 +75,9 @@ const StartUps = () => {
     const navigation = useNavigation();
     return (
         <MainContainer>
-                <NewButton onPress={navigation.push("NewInquiry")}>
+                <NewButton onPress={() => navigation.navigate("ExploreStartups")}>
                     <ButtonText>
-                    New Startup
+                        Explore Startups
                     </ButtonText>
                 </NewButton>
                 <InquiriesContainer style={globalStyles.darkShadow}>

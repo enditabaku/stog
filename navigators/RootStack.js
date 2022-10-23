@@ -16,9 +16,10 @@ import Welcome from './../screens/Welcome';
 import Home from "./../screens/Home";
 import Profile from "../screens/UserProfile";
 import Inquiries from "../screens/Inquiries";
-import NewInquiry from "../screens/Inquiries/newInquiry";
 import Contracts from "../screens/Contracts";
 import Logout from './../screens/Logout'
+
+import ExploreStartups from "../screens/Inquiries/components/Startups/ExploreStartups";
 
 const Stack = createStackNavigator();
 
@@ -155,7 +156,7 @@ const RootStack = () => {
             {/* Welcome/Login screen is the first screen that renders if no user is logged in, priority is the way they're ordered. */}
                <Stack.Screen name="Welcome" component={Welcome} />
                <Stack.Screen name="Home" component={MyTabs} />
-               <Stack.Screen name="NewInquiry" component={NewInquiry} />
+               <Stack.Screen name="ExploreStartups" component={ExploreStartups} />
             </>
           </Stack.Navigator>
         </NavigationContainer>
