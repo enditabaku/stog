@@ -20,6 +20,7 @@ import Contracts from "../screens/Contracts";
 import Logout from './../screens/Logout'
 
 import ExploreStartups from "../screens/Inquiries/components/Startups/ExploreStartups";
+import ExploreStartup from "../screens/Inquiries/components/Startups/ExploreStartup";
 
 const Stack = createStackNavigator();
 
@@ -157,6 +158,7 @@ const RootStack = () => {
                <Stack.Screen name="Welcome" component={Welcome} />
                <Stack.Screen name="Home" component={MyTabs} />
                <Stack.Screen name="ExploreStartups" component={ExploreStartups} />
+               <Stack.Screen name="ExploreStartup" component={ExploreStartup} />
             </>
           </Stack.Navigator>
         </NavigationContainer>
