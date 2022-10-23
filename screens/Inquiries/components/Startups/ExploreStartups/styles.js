@@ -67,7 +67,7 @@ export const ButtonsContainer = styled.View`
 export const LearnMoreButton = styled.TouchableOpacity`
     padding: 15px 10px;
     background-color: ${Colors.red};
-    border-radius: 1px solid ${Colors.darkred};
+    border: 1px solid ${Colors.darkred};
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -78,4 +78,5 @@ export const LearnMoreButton = styled.TouchableOpacity`
 
 export const LearnMoreButtonText = styled.Text`
     font-family: "Poppins-Regular";
+    color: ${Colors.white}
 `

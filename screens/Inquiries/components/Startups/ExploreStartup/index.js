@@ -46,6 +46,7 @@ const ExploreStartup = (props) => {
                 </Company>
                 </ImageBackground>
 
+            <Dates></Dates>
             <Dates>
                 Starts: {project.startDate}
             </Dates>
@@ -55,6 +56,7 @@ const ExploreStartup = (props) => {
             <Dates>
             Estimated: {project.estimatedTimePeriodMonths} months.
             </Dates>
+            <Dates></Dates>
             <Description>
                 {project.description}
             </Description>

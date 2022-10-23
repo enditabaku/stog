@@ -134,7 +134,7 @@ const ExploreStartups = () => {
                             </LearnMoreButton>
                             
                             <LearnMoreButton> 
-                                <LearnMoreButtonText>
+                                <LearnMoreButtonText onPress={() => navigation.push("Apply", {id: startupProject.id})}>
                                     Apply Now
                                 </LearnMoreButtonText>
                             </LearnMoreButton>
