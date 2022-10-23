@@ -70,6 +70,7 @@ const inquiries = [
 const Education = () => {
     return (
         <MainContainer>
+            {/* Apply for a new education inquiry */}
                 <NewButton>
                     <ButtonText>
                     New Education Inquiry
@@ -79,6 +80,8 @@ const Education = () => {
                     <HeaderText>
                         My Inquiries
                     </HeaderText>
+
+                    {/* All existing inquiries listed, including the pending and rejected ones. */}
                     <Inquiries>
                         <ScrollView showsVerticalScrollIndicator={false}
 

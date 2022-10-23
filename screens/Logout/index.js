@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { Text } from "react-native"
-import { MainContainer } from "../../components/style"
 
 const Logout = () => {
 
+    // Removes creds from storage, thus logging the user out
     useEffect(async () => {
         await AsyncStorage.removeItem('credentials')
             .then(() => {

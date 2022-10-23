@@ -53,7 +53,7 @@ const Home = () => {
           }).start();
     }
 
-    // Animates the opsition of balance component by changing the value used as top
+    // Animates the position of balance component by changing the value used as top
     const balanceDown = () => {
         Animated.timing(balanceTop, {
             toValue: 0,
@@ -61,6 +61,7 @@ const Home = () => {
           }).start();
     }
 
+    // Animates the position of transactions component by changing the value used as bottom
     const transactionsUp = () => {
         Animated.timing(transactionsBottom, {
             toValue: 0,

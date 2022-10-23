@@ -19,6 +19,7 @@ import { globalStyles } from "../../utils/globalStyles"
 import { CredentialsContext } from "../../contexts/CredentialsContext";
 import axios from 'axios';
 
+// User can view, add, edit or delete their information from this page
 const Profile = () => {
 
   const { storedCredentials } = useContext(CredentialsContext)

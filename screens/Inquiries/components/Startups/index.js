@@ -13,6 +13,8 @@ import { MainContainer,
     InquiryInfoTextUnderlined,
     InquiryDate
 } from "./styles"
+
+// Imported to get the drop shadows
 import { globalStyles } from '../../../../utils/globalStyles';
 //navigation
 import { useNavigation } from '@react-navigation/native';
@@ -73,15 +75,17 @@ const StartUps = () => {
     const navigation = useNavigation();
     return (
         <MainContainer>
-                <NewButton onPress={navigation.push("NewInquiry")}>
+                <NewButton onPress={() => navigation.navigate("ExploreStartups")}>
                     <ButtonText>
-                    New Startup
+                        Explore Startups
                     </ButtonText>
                 </NewButton>
                 <InquiriesContainer style={globalStyles.darkShadow}>
                     <HeaderText>
                         My Startups
                     </HeaderText>
+
+                    {/* Lists all existing startups the user has appled for, including the pending rejected ones */}
                     <Inquiries>
                         <ScrollView showsVerticalScrollIndicator={false}
 

@@ -16,9 +16,10 @@ import Welcome from './../screens/Welcome';
 import Home from "./../screens/Home";
 import Profile from "../screens/UserProfile";
 import Inquiries from "../screens/Inquiries";
-import NewInquiry from "../screens/Inquiries/newInquiry";
 import Contracts from "../screens/Contracts";
 import Logout from './../screens/Logout'
+
+import ExploreStartups from "../screens/Inquiries/components/Startups/ExploreStartups";
 
 const Stack = createStackNavigator();
 
@@ -26,11 +27,11 @@ const RootStack = () => {
   const [hasUser, setHasUser] = useState(); // states if there is already a logged in user in the app
 
   useEffect(() => {
-    checkLoginCredentials(); // first thing to do check if there are credentials stored
+    checkLoginCredentials(); // Checks if there are credentials stored, if not request from the user
   }, [hasUser]);
 
   const checkLoginCredentials = () => {
-    AsyncStorage.getItem("credentials") // get credentials
+    AsyncStorage.getItem("credentials") // get credentials from user input
       .then((result) => {
         if (result != null) { // if found results than we have a logged in user
           setHasUser(true);
@@ -43,8 +44,8 @@ const RootStack = () => {
 
   const Tab = createBottomTabNavigator();
 
-  // Bottom tabs after login
-  // Here are all screens that are accessible only if user is logged in
+  // Bottom navbar, each seperate tab.
+  // Screens are only accessible for logged in users
   function MyTabs() {
     const navigation = useNavigation();
     return (
@@ -152,10 +153,10 @@ const RootStack = () => {
             }}
           >
             <>
-            {/* Welcome or Login screen is the first screen that renders if no user is logged in */}
+            {/* Welcome/Login screen is the first screen that renders if no user is logged in, priority is the way they're ordered. */}
                <Stack.Screen name="Welcome" component={Welcome} />
                <Stack.Screen name="Home" component={MyTabs} />
-               <Stack.Screen name="NewInquiry" component={NewInquiry} />
+               <Stack.Screen name="ExploreStartups" component={ExploreStartups} />
             </>
           </Stack.Navigator>
         </NavigationContainer>
